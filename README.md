@@ -1,4 +1,4 @@
-# Activity 3(Finals): Basic CRUD with Login Authentication
+# Activity 3(Finals): PHP Basic CRUD with Login Authentication
 
 ## Programming Languages & Compiler
 
@@ -7,13 +7,13 @@
 #
 
 - [X] For Admin 
-- Username: admin
-- Password: admin123
+- Username: `admin`
+- Password: `admin123`
 - [X] For Student
-- Username: cardo
-- Password: cardo123
+- Username: `cardo`
+- Password: `cardo123`
 - [X] For Faculty
-- Username: michael
-- Password: michael123
+- Username: `michael`
+- Password: `michael123`
 
  #
