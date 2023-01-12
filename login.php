@@ -1,12 +1,12 @@
 <?php
 session_start();
-include 'koneksyon.php';
+include 'conn.php';
 
 $username = $_POST['uname'];
 $password = $_POST['password'];
 
 
-   $result = mysqli_query($koneksyon, "SELECT * FROM users WHERE user_name = '$username' ");
+   $result = mysqli_query($conn, "SELECT * FROM users WHERE user_name = '$username' ");
     while($row = mysqli_fetch_array($result)){
         if($row['user_password'] == $password && $row['user_type'] == 'admin'){
             $_SESSION['id'] = $row['user_id'];
