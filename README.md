@@ -4,8 +4,6 @@
 
 ### Accounts:
 
-#
-
 - [X] For Admin 
 - Username: `admin`
 - Password: `admin123`
