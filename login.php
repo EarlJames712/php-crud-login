@@ -1,12 +1,13 @@
 <?php
 session_start();
 include 'conn.php';
+if(isset($_POST)) {
 
-$username = $_POST['uname'];
-$password = $_POST['password'];
+    $username = $_POST['uname'];
+    $password = $_POST['password'];
 
 
-   $result = mysqli_query($conn, "SELECT * FROM users WHERE user_name = '$username' ");
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE user_name = '$username' ");
     while($row = mysqli_fetch_array($result)){
         if($row['user_password'] == $password && $row['user_type'] == 'admin'){
             $_SESSION['id'] = $row['user_id'];
@@ -23,8 +24,13 @@ $password = $_POST['password'];
             $_SESSION['username'] = $row['user_name'];
             header('location: student.php');
         }else{
-            echo "<script>alert('Cannot find acount');</script>";
-        }   
+            echo '<script>alert("Account not found.")</script>';
+
+        }
+    }
+}
+else {
+    header("location: index.php");
 }
 
 ?>
