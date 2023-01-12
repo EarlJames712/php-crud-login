@@ -12,6 +12,3 @@ $sqlInsert = "INSERT INTO student_list (firstname, lastname, department) VALUES(
 
 # Execute query
 mysqli_query($conn, $sqlInsert);
-
-# Head back to index
-header("location: index.php");
