@@ -11,5 +11,6 @@ $query = "DELETE FROM student_list WHERE id = '$id' ";
 # Execute the query
 mysqli_query($conn, $query);
 
-# Head back to index
-header("location: index.php");
+# Head back to current page
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit;
