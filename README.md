@@ -18,5 +18,14 @@
 
  #
 
+## Project Setup
+
+- Create a new database in ```http://localhost/phpmyadmin/```
+- Import school_db.sql from [**/sql**](https://github.com/ronhedwigzape/php-crud-login/tree/master/sql) folder to ```http://localhost/phpmyadmin/```
+
+#
+
 ### To be submitted: Sir Michael Bañaria
 ### Ron Hedwig Zape of BSCS 3
+
+#
