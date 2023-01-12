@@ -20,17 +20,6 @@
                 }
             });
         });
-        //$("#delete").click(function (e) {
-        //    e.preventDefault();
-        //
-        //    $.ajax({
-        //        type: 'GET',
-        //        url: 'deleteData.php?id=<?//= $row['id']?>//',
-        //        success: function() {
-        //            alert("Data is deleted!");
-        //        }
-        //    });
-        //})
     });
 </script>
 </body>
