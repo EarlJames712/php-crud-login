@@ -32,6 +32,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label">New Department</label>
             </div>
             <button class="btn btn-success" type="submit">UPDATE</button>
+            <a href="javascript:history.back()" class="btn btn-primary">Go Back</a>
         </form>
     </center>
 </div>
