@@ -1,4 +1,6 @@
-# Activity 3: Basic CRUD with Login Authentication
+# Activity 3(Finals): Basic CRUD with Login Authentication
+
+## Programming Languages & Compiler
 
 ### Accounts:
 
