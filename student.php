@@ -14,7 +14,7 @@
   <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-    <a class="nav-link text-center" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+    <a class="nav-link text-center p-3" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
     </div>
   </div>
 </header>
