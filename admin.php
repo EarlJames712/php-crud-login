@@ -128,41 +128,81 @@
                     </div>
                     <button class="btn btn-primary" type="submit">ADD</button>
                 </form>
-
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Department</th>
-                        <th scope="col" colspan="2" class="text-center">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    require_once 'conn.php';
-                    $no =  1 ;
-                    $data = mysqli_query($conn, "SELECT * FROM student_list");
-                    while($row = mysqli_fetch_array($data)){
-                        ?>
-                        <tr>
-                            <td><?= $no; ?></td>
-                            <td><?= $row['firstname']; ?></td>
-                            <td><?= $row['lastname']; ?></td>
-                            <td><?= $row['department']; ?></td>
-                            <td><a type="button" id="delete" class="btn btn-danger" href="deleteData.php?id=<?= $row['id']?>">DELETE</a></td>
-                            <td><a type="button" id="edit" class="btn btn-warning" href="editData.php?id=<?= $row['id']?>">EDIT</a></td>
-                        </tr>
-                        <?php $no++; } ?>
-                    </tbody>
+                <table id="myTable" class="display table">
+                  <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Department</th>
+                      <th>Delete</th>
+                      <th>Edit</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                  require_once 'conn.php';
+                  $no =  1 ;
+                  $data = mysqli_query($conn, "SELECT * FROM student_list");
+                  while($row = mysqli_fetch_array($data)){
+                      ?>
+                      <tr>
+                          <td><?= $no; ?></td>
+                          <td><?= $row['firstname']; ?></td>
+                          <td><?= $row['lastname']; ?></td>
+                          <td><?= $row['department']; ?></td>
+                          <td><a type="button" id="delete" class="btn btn-danger" href="deleteData.php?id=<?= $row['id']?>">DELETE</a></td>
+                          <td><!-- Button trigger modal -->
+                          <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editId<?php echo $row['id']?>">
+                            Edit
+                          </a></td>
+                      </tr>
+                      <!-- Modal -->
+                      <div class="modal fade" id="editId<?php echo $row['id']?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <form action="updateData.php" method="post">
+                                  <div class="form-floating mb-3">
+                                    <input type="hidden" name="id" value="<?= $row['id']?>">
+                                      <input type="text" name="fn" class="form-control" value="<?= $row['firstname']?>" placeholder="Your First Name">
+                                      <label for="first-name" class="form-label">New First Name</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                      <input type="text" name="ln" class="form-control" value="<?= $row['lastname']; ?>" id="floatingPassword" placeholder="Your Last Name">
+                                      <label for="floatingPassword">New Last Name</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                      <input name="d" class="form-control form-control-lg" value="<?= $row['department']; ?>" type="text" placeholder="Department">
+                                      <label for="exampleFormControlTextarea1" class="form-label">New Department</label>
+                                  </div>
+                                  <button class="btn btn-success" type="submit">UPDATE</button>
+                                  <a href="javascript:history.back()" class="btn btn-primary">Go Back</a>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <?php $no++; } ?>
+                  </tbody>
                 </table>
+              
 
             </center>
         </div>
     </main>
   </div>
 </div>
+
+
 <?php
      require_once 'components/footer.php';
 }
