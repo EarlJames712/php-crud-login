@@ -12,3 +12,7 @@ $sqlInsert = "INSERT INTO student_list (firstname, lastname, department) VALUES(
 
 # Execute query
 mysqli_query($conn, $sqlInsert);
+
+# Head back to current page
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit;
