@@ -6,7 +6,7 @@ require_once 'conn.php';
 $firstname = $_POST['fn'];
 $lastname = $_POST['ln'];
 $department = $_POST['d'];
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 # Prepare the update query
 $query = "UPDATE student_list SET firstname = '$firstname', lastname = '$lastname', department = '$department' WHERE id = '$id'";
