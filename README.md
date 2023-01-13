@@ -20,6 +20,7 @@
 
 - Create a new database in ```http://localhost/phpmyadmin/```
 - Import school_db.sql from [**/sql**](https://github.com/ronhedwigzape/php-crud-login/tree/master/sql) folder to ```http://localhost/phpmyadmin/```
+- Click Import to make changes to sql query. Done.
 
 #
 
