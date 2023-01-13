@@ -1,5 +1,6 @@
 <script>
     $(function () {
+        $('#myTable').DataTable();
         $(".record").submit(function (e){
             e.preventDefault();
 
@@ -20,6 +21,7 @@
                 }
             });
         });
+       
     });
 </script>
 </body>
