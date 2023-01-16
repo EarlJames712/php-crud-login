@@ -107,7 +107,6 @@
       </div>
         <div class="mt-3 ">
             <div class="m-auto">
-
                 <!-- Add New Button trigger modal -->
                 <button type="button" class="btn btn-success rounded-5 my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Add New Data
@@ -177,7 +176,6 @@
                               <a type="button" id="delete" class="btn btn-danger" href="deleteData.php?id=<?= $row['id']?>">Delete</a>
                               <a type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#editData<?= $row['id']?>">Edit</a>
                           </td>
-
                       </tr>
                       <!-- Modal -->
                       <div class="modal fade" id="editData<?= $row['id']?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
